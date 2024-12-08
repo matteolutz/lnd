@@ -7,6 +7,9 @@ COPY ./nginx/generate.py .
 ARG SERVER_NAME
 ARG SERVER_PORT
 
+RUN echo "Server Name:" $SERVER_NAME
+RUN echo "Server Port:" $SERVER_PORT
+
 RUN python3 generate.py $SERVER_NAME $SERVER_PORT >> nginx.conf
 RUN cat nginx.conf
 
