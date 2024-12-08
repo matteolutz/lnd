@@ -6,8 +6,9 @@ COPY ./nginx/generate.py .
 
 ARG SERVER_NAME
 ARG SERVER_PORT
+ARG SSL
 
-RUN python3 generate.py $SERVER_NAME $SERVER_PORT >> nginx.conf
+RUN python3 generate.py $SERVER_NAME $SERVER_PORT $SSL >> nginx.conf
 RUN cat nginx.conf
 
 FROM nginx:1.21.1-alpine
