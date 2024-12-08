@@ -1,5 +1,22 @@
 version: "3.7"
 services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/nginx.Dockerfile
+    environment:
+      - SERVER_NAME=${SERVER_NAME}
+      - SERVER_PORT=3000
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./config:/config
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /tmp/acme_challenge:/tmp/acme_challenge
+    networks:
+      - app
+    restart: always
   server:
     build: .
     ports:
@@ -46,3 +63,7 @@ services:
 volumes:
   postgres-data:
   pgadmin-data:
+
+networks:
+  app:
+    driver: bridge
