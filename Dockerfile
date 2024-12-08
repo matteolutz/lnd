@@ -58,6 +58,4 @@ ENV SESSION_SECRET $SESSION_SECRET
 ARG PORT
 ENV PORT $PORT
 
-RUN npm run setup
-
 CMD ["npm", "start"]
