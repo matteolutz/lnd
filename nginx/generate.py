@@ -1,7 +1,6 @@
 import sys
 
 def main():
-    raise Exception(f"This is sys argv: {sys.argv}")
     server_name = sys.argv[1]
     server_port = sys.argv[2]
 

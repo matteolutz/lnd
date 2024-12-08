@@ -4,9 +4,9 @@ services:
     build:
       context: .
       dockerfile: nginx/nginx.Dockerfile
-    environment:
-      - SERVER_NAME=${SERVER_NAME}
-      - SERVER_PORT=3000
+      args:
+        - SERVER_NAME=${SERVER_NAME}
+        - SERVER_PORT=3000
     ports:
       - 80:80
       - 443:443
