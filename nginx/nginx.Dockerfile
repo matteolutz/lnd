@@ -5,12 +5,9 @@ WORKDIR /app
 COPY ./nginx/generate.py .
 
 ARG SERVER_NAME
-ENV SERVER_NAME $SERVER_NAME
-
 ARG SERVER_PORT
-ENV SERVER_PORT $SERVER_PORT
 
-RUN python3 generate.py >> nginx.conf
+RUN python3 generate.py $SERVER_NAME $SERVER_PORT >> nginx.conf
 RUN cat nginx.conf
 
 FROM nginx:1.21.1-alpine

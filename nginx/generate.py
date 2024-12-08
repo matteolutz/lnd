@@ -1,8 +1,9 @@
-import os
+import sys
 
 def main():
-    server_name = os.environ['SERVER_NAME']
-    server_port = os.environ['SERVER_PORT']
+    server_name = sys.argv[1]
+    server_port = sys.argv[2]
+
     config = f"""
         server {{
             listen 80;
@@ -35,6 +36,7 @@ def main():
             }}
         }}
         """
+
     print(config)
 
 if __name__ == '__main__':
