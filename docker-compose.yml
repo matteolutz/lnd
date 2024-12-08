@@ -28,7 +28,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     restart: always
@@ -36,9 +36,13 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@lnd.com
       PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - ./pgadmin-data:/var/lib/pgadmin
+      - pgadmin-data:/var/lib/pgadmin
     ports:
       - "5050:80"
     depends_on:
       postgres:
         condition: service_healthy
+
+volumes:
+  postgres-data:
+  pgadmin-data:
