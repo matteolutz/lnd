@@ -36,7 +36,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@lnd.com
       PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      - ./pgadmin-data:/var/lib/pgadmin
     ports:
       - "5050:80"
     depends_on:
