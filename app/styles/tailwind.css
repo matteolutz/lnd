@@ -1,0 +1,6 @@
+@import "./complementary/fonts/highrise.css";
+@import "./complementary/fonts/kollektif.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

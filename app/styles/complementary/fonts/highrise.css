@@ -1,0 +1,15 @@
+/* Regular */
+@font-face {
+  font-family: "Highrise";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/highrise/HighriseFont-Demo-Regular.otf");
+}
+
+/* Bold */
+@font-face {
+  font-family: "Highrise";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/highrise/HighriseFont-Bold-Demo.otf");
+}
